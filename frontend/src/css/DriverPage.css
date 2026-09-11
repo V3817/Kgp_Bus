@@ -1,0 +1,23 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.driver-page {
+  flex: 1;
+  height: calc(150vh - 210px); /* Increased by 50% (from 100vh to 150vh) and adjusted header/footer space accordingly */
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0; /* Add some margin to separate from header and footer */
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+  color: #555;
+}

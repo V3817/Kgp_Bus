@@ -1,0 +1,1238 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.bus-stops-view {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.bus-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  margin-top: 10px;
+  border-top: 1px solid #563ebd;
+}
+
+.track-bus-btn {
+  background-color: #4285f4;  /* Light blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s;
+}
+
+.track-bus-btn:hover {
+  background-color: #3367d6;  /* Dark blue */
+}
+
+.track-bus-btn i {
+  font-size: 14px;
+}
+
+.bus-stops-view .control-panel {
+    flex: 0 0 300px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    overflow-y: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.bus-stops-view .map-container {
+    flex: 1;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Results panel styles (replaces map when search is performed) */
+.bus-stops-view .results-panel {
+    flex: 1;
+    height: 100%;
+    border-radius: 8px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.results-panel h2 {
+    color: #1a73e8;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Bus card styles */
+.bus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bus-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bus-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.bus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bus-header h3 {
+    margin: 0;
+    color: #202124;
+}
+
+.trip-badge {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.bus-route {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.route-stop {
+    flex: 1;
+    text-align: center;
+}
+
+.stop-time {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.stop-marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 8px auto;
+}
+
+.from-marker {
+    background-color: #34a853;
+}
+
+.to-marker {
+    background-color: #ea4335;
+}
+
+.stop-name {
+    font-size: 14px;
+}
+
+.route-line {
+    flex: 2;
+    height: 4px;
+    background-color: #dadce0;
+    position: relative;
+}
+
+.duration {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8f9fa;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.bus-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.bus-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #5f6368;
+    font-size: 14px;
+}
+
+.bus-detail i {
+    color: #1a73e8;
+}
+
+/* Loading state */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #1a73e8;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* No results state */
+.no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+    color: #5f6368;
+}
+
+.no-results i {
+    font-size: 48px;
+    color: #dadce0;
+    margin-bottom: 15px;
+}
+
+/* Popup buttons */
+.popup-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 5px 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.popup-button:hover {
+    background-color: #1765cc;
+}
+
+.location-form {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #5f6368;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.search-btn:hover {
+    background-color: #1765cc;
+}
+
+.bus-stops-list {
+    margin-top: 30px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+}
+
+.bus-stops-list h3 {
+    color: #1a73e8;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.bus-stops-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bus-stops-list li {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bus-stops-list li:hover {
+    background-color: #e8f0fe;
+}
+
+.bus-stops-list li strong {
+    margin-right: 5px;
+    color: #1a73e8;
+}
+
+.error-message {
+    color: #d93025;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgba(217, 48, 37, 0.1);
+}
+
+.bus-stop-popup {
+    min-width: 200px;
+    padding: 5px;
+}
+
+.bus-stop-popup h3 {
+    color: #1a73e8;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #e8f0fe;
+    padding-bottom: 5px;
+}
+
+.bus-stop-popup p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.bus-stop-popup strong {
+    font-weight: 500;
+    color: #5f6368;
+}
+
+@media (max-width: 768px) {
+    .bus-stops-view {
+        flex-direction: column;
+    }
+    
+    .bus-stops-view .control-panel {
+        flex: none;
+        margin-right: 0;
+        margin-bottom: 15px;
+        max-height: 300px;
+    }
+    
+    .bus-stops-view .map-container {
+        flex: none;
+        height: 400px;
+    }
+}
+
+@media (min-width: 768px) {
+  .bus-map-container {
+    height: 100%;
+    min-height: 500px;
+  }
+}
+
+/* Make sure the map container fills the available space */
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bus-search {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Styling for the track-bus-btn to make it consistent with busTracking.css */
+.track-bus-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.track-bus-btn:hover:not(:disabled) {
+  background-color: #3367d6;
+}
+
+.track-bus-btn:disabled {
+  background-color: #a4c0f4;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.selected-bus-info {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.bus-status {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.bus-status.active {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+}
+
+.bus-status.not-active {
+  background-color: #ffebee;
+  border-left: 4px solid #f44336;
+}
+
+.bus-status p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.bus-popup h3,
+.stop-popup h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+
+.bus-popup p,
+.stop-popup p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* Custom dropdown styling to match busTracking.css */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.custom-dropdown input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-list .loading-item {
+  padding: 10px;
+  color: #888;
+  font-style: italic;
+}
+
+.dropdown-list .error-item {
+  padding: 10px;
+  color: #d9534f;
+}
+
+/* Results list styling */
+.results-list {
+  margin-top: 15px;
+}
+
+.result-item {
+  background-color: white;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.result-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.result-details h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.distance {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.no-results {
+  color: #888;
+  font-style: italic;
+  padding: 15px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.help-text {
+  color: #666;
+  font-style: italic;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+/* Enhanced help text styling to match the Bus Track component */
+.help-text.bus-selection-help {
+  color: #3c4043;
+  font-style: normal;
+  margin: 15px 0;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.help-text.bus-selection-help i {
+  color: #4285f4;
+  margin-right: 10px;
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}
+
+/* Form control styling to match the Track a Bus page, keep it commented otherise disturb other pages css
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+} */
+
+/* Location controls */
+.location-control {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    z-index: 1000;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    width: 34px;
+    height: 34px;
+}
+
+.location-control button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.location-control button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Search control */
+.search-control {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    right: 50px;
+    z-index: 1000;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    padding: 6px;
+}
+
+.search-control input {
+    width: 85%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-control button {
+    width: 13%;
+    padding: 8px;
+    margin-left: 2%;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Loading overlay */
+.map-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500;
+}
+
+.map-loading-overlay p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #1a73e8;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Route list styling */
+.route-list {
+    margin-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+}
+
+.route-list h3 {
+    color: #1a73e8;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.route-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 12px;
+    padding: 12px;
+    transition: all 0.2s ease;
+}
+
+.route-item:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.route-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.route-item-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #202124;
+}
+
+.route-item-details {
+    font-size: 13px;
+    color: #5f6368;
+    margin-bottom: 8px;
+}
+
+.route-item-details div {
+    margin-bottom: 4px;
+}
+
+.route-item-details i {
+    width: 16px;
+    text-align: center;
+    margin-right: 6px;
+    color: #1a73e8;
+}
+
+.route-item-actions button {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.route-item-actions button:hover {
+    background: #1765cc;
+}
+
+.current-location-label {
+    display: inline-block;
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.search-results {
+    margin-top: 5px;
+    max-height: 250px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    z-index: 1100;
+}
+
+.search-result-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item .result-name {
+    font-weight: 500;
+    color: #1a73e8;
+}
+
+.search-result-item .result-address {
+    font-size: 12px;
+    color: #5f6368;
+    margin-top: 3px;
+}
+
+/* Custom location buttons */
+.custom-location-btn {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+    width: 100%;
+    text-align: left;
+}
+
+.custom-location-btn:hover {
+    background-color: #d2e3fc;
+}
+
+.custom-location-btn i {
+    margin-right: 5px;
+}
+
+/* Reset button for start location */
+.use-current-btn {
+    background: none;
+    border: none;
+    color: #d93025;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.use-current-btn:hover {
+    color: #b31412;
+}
+
+/* Location input group layout */
+.location-input-group {
+    display: flex;
+    align-items: center;
+}
+
+.location-input-group input {
+    flex: 1;
+}
+
+/* Search instruction text */
+.search-instruction {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 15px 0;
+    font-size: 14px;
+    border-left: 3px solid #1a73e8;
+}
+
+.search-instruction i {
+    margin-right: 5px;
+}
+
+/* Small hint text */
+.small-hint {
+    font-size: 12px;
+    color: #5f6368;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.small-hint i {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+/* Dropdown styling with toggle button */
+.dropdown-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-input-container input {
+  flex-grow: 1;
+  padding-right: 40px; /* Make room for the dropdown button */
+}
+
+.dropdown-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  background: none;
+  border: none;
+  border-left: 1px solid #ced4da;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #495057;
+  transition: background-color 0.2s;
+}
+
+.dropdown-toggle-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.dropdown-toggle-btn i {
+  font-size: 12px;
+}
+
+/* Add this new style for the help text container in the right panel */
+.help-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.help-text-container .help-text.bus-selection-help {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+}
+
+.help-text-container .help-text.bus-selection-help i {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 0;
+}
+
+/* Fix for dropdown positioning */
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Update the help text container for better centering */
+.help-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center; /* Ensure text is centered */
+}
+
+.help-text-container .help-text.bus-selection-help {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+  width: 80%; /* Control the width */
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center;  /* Center horizontally */
+}
+
+.help-text-container .help-text.bus-selection-help i {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 0;
+}
+
+/* Add a new class for center-aligned text */
+.center-text {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-text span {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #5f6368;
+}
+
+/* Bus tracking overlay styles */
+.tracking-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.tracking-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tracking-header h3 {
+  margin: 0;
+  color: #1a73e8;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #5f6368;
+}
+
+.tracking-content {
+  display: flex;
+  height: calc(100% - 60px);
+}
+
+.bus-stop-list {
+  width: 30%;
+  padding: 15px;
+  overflow-y: auto;
+  border-right: 1px solid #e0e0e0;
+}
+
+.bus-stop-list h4 {
+  color: #1a73e8;
+  margin-top: 0;
+}
+
+.bus-stop-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bus-stop-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tracking-map {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2100;
+}
+
+.tracking-error-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2200;
+  max-width: 400px;
+  text-align: center;
+}
+
+.full-page-loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.full-page-loading-overlay .spinner {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.last-updated, .current-stop, .next-stop {
+  font-size: 14px;
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.next-stop .eta {
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.stop-time {
+  margin-left: 5px;
+  font-weight: 500;
+  color: #1a73e8;
+}
+
+.bus-popup, .stop-popup {
+  min-width: 200px;
+}
+
+/* Popup overlay and container for tracking (centered) */
+.tracking-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tracking-popup-container {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 900px;
+  height: 80vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 10001;
+}
+
+.tracking-popup-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10002;
+  background: #ff3333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.tracking-popup-close-btn:hover {
+  background: #d32f2f;
+}

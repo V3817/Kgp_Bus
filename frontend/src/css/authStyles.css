@@ -1,0 +1,263 @@
+/* Auth component styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #aba9a9;
+  background-color: #0B101B;
+}
+
+h1 {
+  font-style: bold;
+  font-weight: 600;
+  font-size: 50px;
+  margin: 0;
+  background: -webkit-linear-gradient(left, #144EE3, #EB568E, #A353AA, #144EE3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Basic button styles */
+button {
+  background-color: #9061ac;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 48px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 14px;
+  margin: 0 10px 40px 10px;
+}
+
+/* Auth container styles */
+.login-box,
+.signup-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 4rem;
+  width: 30rem;
+  text-align: center;
+  border: 3px solid #353C4A;
+  border-radius: 32px;
+  box-shadow: 0 25px 50px rgb(44, 110, 110);
+  background-color: rgb(0, 0, 0);
+  background-image: radial-gradient(at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, rgb(67, 41, 110) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, rgb(173, 241, 255) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, rgb(80, 36, 255) 0px, transparent 85%);
+}
+
+.login-box {
+  height: 35rem;
+}
+
+.signup-box {
+  height: 37rem;
+}
+
+/* Google login section */
+.google-login {
+  width: 100%;
+  height: 3rem;
+  background-color: #144EE3;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 1px 4px 10px 2px rgba(70, 113, 179, 0.2);
+}
+
+.google-loginbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  width: 22rem;
+  border-bottom: 3px solid #353C4A;
+}
+
+/* Form section */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 22rem;
+}
+
+.emailSignin {
+  font-size: larger;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(0, 255, 255);
+}
+
+/* Form input fields */
+.email,
+.password,
+.username {
+  background-color: #212121;
+  width: 22rem !important; /* Force consistent width */
+  padding: 10px;
+  margin: 0.5rem 0;
+  border: 2px solid white !important; /* Ensure border doesn't change on focus */
+  border-radius: 5px !important; /* Prevent border-radius changes */
+  color: white;
+  box-sizing: border-box;
+}
+
+.email:focus,
+.password:focus,
+.username:focus {
+  color: white;
+  background-color: #568299;
+  outline-color: rgb(0, 255, 255);
+  box-shadow: -3px -3px 15px rgb(0, 255, 255);
+  transition: .1s;
+  transition-property: box-shadow;
+}
+
+/* Input placeholder colors */
+.username::placeholder,
+.email::placeholder,
+.password::placeholder {
+  color: #aaa;
+}
+
+/* Password field with eye icon */
+.password-wrapper {
+  position: relative;
+  width: 22rem;
+  margin: 0.5rem 0;
+}
+
+/* Show/hide password icon styling */
+.show-password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent !important;
+  border: none !important;
+  color: rgb(0, 255, 255);
+  cursor: pointer;
+  padding: 0;
+  width: auto;
+  height: auto;
+  box-shadow: none !important;
+  z-index: 10; /* Ensure the button stays above the input */
+  border-radius: 0 !important;
+}
+
+.show-password-toggle:hover, 
+.show-password-toggle:focus, 
+.show-password-toggle:active {
+  color: white;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Prevent input field style changes when interacting with the button */
+.password-wrapper:focus-within .password {
+  border-radius: 5px !important;
+  border: 2px solid white !important;
+}
+
+/* Hide the forgot password section */
+.forgot-password {
+  display: none;
+}
+
+/* Form submit buttons */
+.login-button,
+.signup-button {
+  border-radius: 0.5em;
+  height: 2.5rem;
+  width: 22rem;
+  background-color: #000;
+  color: #ffffff;
+  cursor: pointer;
+  border: 3px solid rgb(0, 0, 0);
+  margin: 1rem 0;
+  box-shadow: 2px 2px 3px #000000b4;
+}
+
+.login-button:hover,
+.signup-button:hover {
+  background-color: #03a9f4;
+  border: 3px solid rgb(0, 255, 255);
+  color: rgb(0, 255, 255);
+  box-shadow: 2px 2px 3px #48a9cab4;
+}
+
+/* Account links section */
+.noaccount {
+  margin-top: 3rem;
+  margin-bottom: -2rem;
+}
+
+.gotosignup {
+  color: rgb(0, 255, 255);
+  cursor: pointer;
+}
+
+/* Responsive design for auth components */
+@media (max-width: 646px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .login-box,
+  .signup-box {
+    width: 90%;
+    max-width: 30rem;
+    margin-top: 2rem;
+  }
+
+  .login-form,
+  .google-loginbox {
+    width: 90%;
+  }
+
+  .email,
+  .password,
+  .username,
+  .password-wrapper,
+  .login-button,
+  .signup-button {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-box {
+    height: auto;
+    min-height: 35rem;
+    padding: 2rem 0;
+  }
+
+  .signup-box {
+    height: auto;
+    min-height: 37rem;
+    padding: 2rem 0;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .emailSignin {
+    font-size: 1rem;
+  }
+}

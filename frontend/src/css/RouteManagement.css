@@ -1,0 +1,665 @@
+/* Start Times Section */
+.start-times-section {
+  background: linear-gradient(to right, #f9fcff, #f5f7fa);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-left: 5px solid #f39c12;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.start-times-section h4 {
+  color: #f39c12;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.start-times-section h4::before {
+  content: "\f017"; /* Clock icon using FontAwesome */
+  font-family: "Font Awesome 5 Free";
+  margin-right: 8px;
+  font-weight: 900;
+}
+
+.start-times-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.start-times-table th {
+  background-color: #f39c12;
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.start-times-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  transition: background-color 0.15s;
+}
+
+.start-times-table tr:last-child td {
+  border-bottom: none;
+}
+
+.start-times-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.add-start-time-button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(243, 156, 18, 0.3);
+}
+
+.add-start-time-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(243, 156, 18, 0.4);
+}
+
+.add-start-time-button::before {
+  content: "+";
+  font-size: 1.2rem;
+}
+
+.add-start-time-form {
+  background-color: white;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
+
+.add-start-time-form h5 {
+  color: #f39c12;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input[type="time"] {
+  width: 180px;
+  padding: 10px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.form-group input[type="time"]:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.15);
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.form-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.form-buttons button:first-child {
+  background-color: #f39c12;
+  color: white;
+  box-shadow: 0 2px 5px rgba(243, 156, 18, 0.3);
+}
+
+.form-buttons button:first-child:hover {
+  background-color: #e67e22;
+  box-shadow: 0 4px 8px rgba(243, 156, 18, 0.4);
+}
+
+.form-buttons button:last-child {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.form-buttons button:last-child:hover {
+  background-color: #dee2e6;
+}
+
+/* Route Stops Section - Enhanced */
+.route-stops-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.route-stops-table th {
+  background-color: #3498db;
+  color: white;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.route-stops-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  transition: background-color 0.15s;
+}
+
+.route-stops-table tr:last-child td {
+  border-bottom: none;
+}
+
+.route-stops-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.route-stops-table th:first-child,
+.route-stops-table td:first-child {
+  width: 70px;
+  text-align: center;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.route-stops-table th:nth-child(3),
+.route-stops-table td:nth-child(3) {
+  width: 180px;
+}
+
+.route-stops-table input[type="number"] {
+  width: 100px;
+  padding: 8px 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.route-stops-table select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: white;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.route-stops-table select:focus,
+.route-stops-table input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+  outline: none;
+}
+
+.add-stop-button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 5px rgba(46, 204, 113, 0.3);
+}
+
+.add-stop-button:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.4);
+}
+
+.add-stop-button::before {
+  content: "+";
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.add-stop-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  border-left: 5px solid #2ecc71;
+}
+
+.add-stop-form h5 {
+  color: #2ecc71;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Table Row Actions */
+.route-stops-table td button,
+.start-times-table td button {
+  padding: 6px 12px !important;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-right: 8px !important;
+}
+
+.route-stops-table td button:first-child,
+.start-times-table td button:first-child {
+  background-color: #3498db;
+  color: white;
+  box-shadow: 0 1px 3px rgba(52, 152, 219, 0.3);
+}
+
+.route-stops-table td button:first-child:hover,
+.start-times-table td button:first-child:hover {
+  background-color: #2980b9;
+  box-shadow: 0 2px 5px rgba(52, 152, 219, 0.4);
+}
+
+.route-stops-table td button:last-child,
+.start-times-table td button:last-child {
+  background-color: #e74c3c;
+  color: white;
+  box-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
+}
+
+.route-stops-table td button:last-child:hover,
+.start-times-table td button:last-child:hover {
+  background-color: #c0392b;
+  box-shadow: 0 2px 5px rgba(231, 76, 60, 0.4);
+}
+
+/* Route Management - Beautiful & Attractive Design */
+.route-management {
+  position: relative;
+  min-height: 500px;
+  background-color: #f5f7fa;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.route-management h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.route-management h2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  border-radius: 2px;
+}
+
+/* Updated Bus Selector with Dropdown */
+.bus-selector {
+  grid-column: 1 / -1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #3498db;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.bus-selector h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* New Dropdown Styles */
+.bus-selector-dropdown {
+  width: 100%;
+  max-width: 400px;
+}
+
+.bus-dropdown {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 500;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23495057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.bus-dropdown:hover {
+  border-color: #cbd3da;
+  background-color: #f1f3f5;
+}
+
+.bus-dropdown:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+  outline: none;
+}
+
+.bus-dropdown option {
+  padding: 12px;
+}
+
+/* Modern Layout - Routes on Left, Map on Right - Updated Width Ratio */
+.route-management-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr); /* Changed from 1.2fr:0.8fr to 0.8fr:1.5fr */
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* Route Editor Section - Left Side */
+.route-editor {
+  grid-column: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  max-height: 85vh;
+  height: 100%;
+  scrollbar-width: thin;
+}
+
+.route-editor::-webkit-scrollbar {
+  width: 6px;
+}
+
+.route-editor::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.route-editor::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.route-editor::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.route-editor h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+}
+
+.route-editor h4 {
+  color: #3498db;
+  font-size: 1.1rem;
+  margin: 20px 0 15px;
+  font-weight: 600;
+}
+
+/* Map Container - Right Side */
+.route-map-container {
+  grid-column: 2;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  min-height: 500px;
+  height: 85vh; /* Fixed height to match the route editor */
+  transition: all 0.3s ease;
+}
+
+.route-map-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.leaflet-container {
+  height: 100% !important;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Route Status */
+.route-status {
+  background: linear-gradient(to right, #ebf7fe, #f5f7fa);
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-top: 20px;
+  text-align: center;
+  border-left: 5px solid #3498db;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.route-status p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.route-status p::before {
+  content: "\f05a"; /* Info icon using FontAwesome */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #3498db;
+}
+
+/* Loading Overlay */
+.fullpage-loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.fullpage-loading-overlay::after {
+  content: '';
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ebf0f5;
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: loader-spin 1s linear infinite;
+}
+
+.fullpage-loading-overlay p {
+  font-size: 1.2rem;
+  color: #3498db;
+  font-weight: 500;
+  margin-top: 15px;
+  animation: fade-in 0.5s ease;
+}
+
+@keyframes loader-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries for Responsive Design - Updated for Wider Map */
+@media (max-width: 1200px) {
+  .route-management-content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); /* Maintain wider map at smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .route-management-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .route-editor {
+    grid-column: 1;
+    order: 1;
+  }
+  
+  .route-map-container {
+    grid-column: 1;
+    order: 2;
+    height: 500px;
+  }
+  
+  .bus-selector-dropdown {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .route-management {
+    padding: 10px;
+  }
+
+  .route-editor, 
+  .bus-selector, 
+  .add-stop-form, 
+  .add-start-time-form {
+    padding: 15px;
+  }
+  
+  .route-map-container {
+    height: 400px;
+  }
+  
+  .bus-list {
+    gap: 8px;
+  }
+  
+  .bus-list button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .route-stops-table th,
+  .route-stops-table td,
+  .start-times-table th,
+  .start-times-table td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Custom Styling for Leaflet Map Elements */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 15px;
+  min-width: 200px;
+}
+
+.leaflet-popup-content strong {
+  display: block;
+  color: #3498db;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.leaflet-popup-tip {
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-control-attribution {
+  font-size: 10px !important;
+}
+
+.leaflet-control-zoom a {
+  color: #2c3e50 !important;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+}
+
+/* Import font awesome for icons if needed */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');

@@ -1,0 +1,101 @@
+/* Map container styling */
+.map-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* For larger maps used in route management */
+.map-container-large {
+  height: 600px;
+}
+
+/* For map containers with additional controls */
+.map-container-with-controls {
+  margin-top: 15px;
+}
+
+/* No buses message styling */
+.map-no-data-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 990;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  max-width: 80%;
+  text-align: center;
+}
+
+/* Route styling */
+.leaflet-routing-container {
+  display: none;  /* Hide the routing instructions */
+}
+
+.leaflet-routing-alt {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Style the route path */
+.leaflet-routing-container .leaflet-routing-alternatives-container {
+  display: none;
+}
+
+.leaflet-routing-container-hide {
+  display: none !important;
+}
+
+/* Make the route line more visible */
+.leaflet-routing-line {
+  stroke-width: 6;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 10, 10;
+  animation: dash 10s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+/* Custom popup styling */
+.leaflet-popup-content {
+  margin: 10px 12px;
+  line-height: 1.4;
+}
+
+.leaflet-popup-content h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.leaflet-popup-content p {
+  margin: 5px 0;
+}
+
+/* Make the map zoom controls more visible */
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: white !important;
+  color: #333 !important;
+}
+
+/* Map attribution */
+.leaflet-control-attribution {
+  font-size: 10px !important;
+}

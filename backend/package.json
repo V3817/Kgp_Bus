@@ -1,0 +1,41 @@
+{
+  "name": "kgp-bus-backend",
+  "version": "1.0.0",
+  "description": "Backend for KGP Bus Management System",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "https": "node server-https.js",
+    "dev-https": "nodemon server-https.js",
+    "create-admin": "node utils/createAdminUser.js",
+    "network-info": "node test-network.js",
+    "generate-cert": "./generate-certificates.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "backend",
+    "postgres"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.14.0",
+    "typed.js": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

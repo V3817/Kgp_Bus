@@ -1,0 +1,153 @@
+.body-container {
+  flex: 1;
+  padding: 0;
+  background-color: #121212;
+}
+
+/* Video Background Styles */
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%; /* This stretches the image to fit exactly */
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 0;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+
+.description {
+  max-width: 800px;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+
+.description h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #FF6B6B;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px; /* Changed from 4px to 50px for round buttons */
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-login {
+  background-color: #4b6cb7;
+  color: #f5f5f5;
+  border: none;
+}
+
+.btn-login:hover {
+  background-color: #0071e3;
+}
+
+.btn-signup {
+  background-color: transparent;
+  color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+}
+
+.btn-signup:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Rest of the content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.image-section {
+  margin-bottom: 2rem;
+}
+
+.clickable-image {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.clickable-image:hover {
+  transform: translateY(-5px);
+}
+
+.image-section p {
+  color: #cccccc;
+  margin-top: 0.75rem;
+}
+
+.description h2 {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  color: #FFD700;
+  min-height: 40px; /* avoid layout shift during typing */
+}

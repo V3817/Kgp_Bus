@@ -1,0 +1,349 @@
+/* Main Profile Styles */
+.profile-container {
+  padding: 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-title {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #343a40;
+  font-weight: 700;
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.profile-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  border-radius: 2px;
+}
+
+/* Card Styling */
+.profile-card, .password-card {
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover, .password-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card .card-header, .password-card .card-header {
+  background: linear-gradient(135deg, #3a4a5d, #252c38);
+  color: white;
+  padding: 1.2rem 1.5rem;
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card .card-header::before, .password-card .card-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+  transform: skewX(-15deg) translateX(-20%);
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+/* Additional Button Styling for Card Bodies */
+.card-body .btn {
+  margin-top: 1rem;
+}
+
+/* For buttons in a row */
+.card-body .btn + .btn {
+  margin-left: 0.5rem;
+}
+
+/* Profile Info Styling */
+.profile-info {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  min-height: 200px;
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.profile-info p:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.profile-info strong {
+  display: inline-block;
+  width: 140px;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Profile Actions Container */
+.profile-card .mt-3 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Make both cards have similar heights */
+.profile-card .card-body, 
+.password-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make form fill available space */
+.profile-card form,
+.password-card form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Push buttons to bottom */
+.profile-card form button,
+.password-card form button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #7952b3;
+  box-shadow: 0 0 0 0.25rem rgba(121, 82, 179, 0.25);
+}
+
+.form-control:disabled {
+  background-color: #f0f2f5;
+  border-color: #dde1e6;
+}
+
+/* Button Styling */
+.btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  border: none;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #8e9eab, #eef2f3);
+  border: none;
+  color: #343a40;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  border: none;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  text-align: center;
+  margin: 5rem 0;
+  font-size: 1.3rem;
+  color: #7952b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.loading-spinner::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 5px solid rgba(121, 82, 179, 0.2);
+  border-top-color: #7952b3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toast Notification Styling */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.toast {
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  pointer-events: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: toastSlideDown 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes toastSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast-error {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border-left: 6px solid #ff1744;
+}
+
+.toast-success {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  color: white;
+  border-left: 6px solid #00c853;
+}
+
+.toast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toast-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.toast-icon {
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.toast-body {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  opacity: 0.8;
+  transition: 0.2s;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.toast-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .profile-info strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .profile-container {
+    padding: 1rem;
+  }
+  
+  .profile-title {
+    font-size: 2rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+}

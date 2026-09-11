@@ -1,0 +1,25 @@
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.about-content h1 {
+  color: #f5f5f5;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 0.5rem;
+}
+
+.about-content h2 {
+  color: #4b6cb7;
+  margin-top: 2rem;
+}
+
+.about-content p {
+  color: #cccccc;
+  line-height: 1.6;
+}

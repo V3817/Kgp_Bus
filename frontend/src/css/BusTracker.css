@@ -1,0 +1,139 @@
+/* Bus Tracker Specific Styles */
+
+.bus-tracker {
+    position: relative;
+    min-height: 500px;
+    background-color: #f5f7fa;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .bus-tracker h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .bus-tracker h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    border-radius: 2px;
+  }
+  
+  /* Route Filter with Enhanced Search Styling */
+  .route-filter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .route-filter label {
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+  
+  .route-filter select {
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: white;
+    min-width: 250px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0aec0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+  }
+  
+  .route-filter select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+  }
+  
+  /* Bus Map Container */
+  .bus-map-container {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    height: 500px;
+    transition: all 0.3s ease;
+  }
+  
+  .bus-map-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Bus List Section */
+  .bus-list {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .bus-list h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 10px;
+  }
+  
+  /* Status Indicators */
+  .status-active {
+    background-color: #2ecc71;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  .status-inactive {
+    background-color: #95a5a6;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .route-filter {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .route-filter select {
+      width: 100%;
+      min-width: auto;
+    }
+    
+    .bus-map-container {
+      height: 400px;
+    }
+  }
+  

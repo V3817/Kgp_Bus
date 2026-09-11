@@ -1,0 +1,30 @@
+.footer {
+  background-color: #0B101B;
+  color: #cccccc;
+  padding: 0.75rem 2rem; /* Reduced padding to decrease height */
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  /* position: fixed; Make it fixed */
+  bottom: 0; /* Position at the bottom */
+  /* width: 100%; Full width */
+  left: 0; /* Align to the left edge */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-name {
+  font-size: 1.2rem; /* Reduced font size */
+  font-weight: 500;
+  margin-bottom: 0.25rem; /* Reduced margin */
+  color: #4b6cb7;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.8rem; /* Reduced font size */
+  color: #999999;
+}
